@@ -1,0 +1,704 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20201.20.0326.1623                               -->
+<workbook original-version='18.1' source-build='2020.1.2 (20201.20.0326.1623)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='NYPD_Shooting_Incident_Data__Historic_.csv+ (Multiple Connections)' inline='true' name='federated.09884ai1gwi1v11drkexl0nzfpt5' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='NYPD_Shooting_Incident_Data__Historic_' name='textscan.1rmnkm30gmecq212z6vsn01icyk4'>
+            <connection class='textscan' directory='/Users/piyu/Documents/DAEN 698/untitled folder' filename='NYPD_Shooting_Incident_Data__Historic_.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='Temperature sheet' name='textscan.17yu3d60xrv3i718ldu3p07udol5'>
+            <connection class='textscan' directory='/Users/piyu/Documents/DAEN 698/untitled folder' filename='Temperature sheet.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation join='left' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[NYPD_Shooting_Incident_Data__Historic_.csv].[OCCUR_DATE]' />
+              <expression op='[Temperature sheet.csv].[DATE]' />
+            </expression>
+          </clause>
+          <relation connection='textscan.1rmnkm30gmecq212z6vsn01icyk4' name='NYPD_Shooting_Incident_Data__Historic_.csv' table='[NYPD_Shooting_Incident_Data__Historic_#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='INCIDENT_KEY' ordinal='0' />
+              <column datatype='date' name='OCCUR_DATE' ordinal='1' />
+              <column datatype='datetime' name='OCCUR_TIME' ordinal='2' />
+              <column datatype='string' name='BORO' ordinal='3' />
+              <column datatype='integer' name='PRECINCT' ordinal='4' />
+              <column datatype='integer' name='JURISDICTION_CODE' ordinal='5' />
+              <column datatype='string' name='LOCATION_DESC' ordinal='6' />
+              <column datatype='boolean' name='STATISTICAL_MURDER_FLAG' ordinal='7' />
+              <column datatype='string' name='PERP_AGE_GROUP' ordinal='8' />
+              <column datatype='string' name='PERP_SEX' ordinal='9' />
+              <column datatype='string' name='PERP_RACE' ordinal='10' />
+              <column datatype='string' name='VIC_AGE_GROUP' ordinal='11' />
+              <column datatype='string' name='VIC_SEX' ordinal='12' />
+              <column datatype='string' name='VIC_RACE' ordinal='13' />
+              <column datatype='integer' name='X_COORD_CD' ordinal='14' />
+              <column datatype='integer' name='Y_COORD_CD' ordinal='15' />
+              <column datatype='real' name='Latitude' ordinal='16' />
+              <column datatype='real' name='Longitude' ordinal='17' />
+            </columns>
+          </relation>
+          <relation connection='textscan.17yu3d60xrv3i718ldu3p07udol5' name='Temperature sheet.csv' table='[Temperature sheet#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='date' name='DATE' ordinal='0' />
+              <column datatype='integer' name='TMAX' ordinal='1' />
+              <column datatype='integer' name='TMIN' ordinal='2' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[NYPD_Shooting_Incident_Data__Historic_.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>INCIDENT_KEY</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[INCIDENT_KEY]</local-name>
+            <parent-name>[NYPD_Shooting_Incident_Data__Historic_.csv]</parent-name>
+            <remote-alias>INCIDENT_KEY</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OCCUR_DATE</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[OCCUR_DATE]</local-name>
+            <parent-name>[NYPD_Shooting_Incident_Data__Historic_.csv]</parent-name>
+            <remote-alias>OCCUR_DATE</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OCCUR_TIME</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[OCCUR_TIME]</local-name>
+            <parent-name>[NYPD_Shooting_Incident_Data__Historic_.csv]</parent-name>
+            <remote-alias>OCCUR_TIME</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BORO</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[BORO]</local-name>
+            <parent-name>[NYPD_Shooting_Incident_Data__Historic_.csv]</parent-name>
+            <remote-alias>BORO</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PRECINCT</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PRECINCT]</local-name>
+            <parent-name>[NYPD_Shooting_Incident_Data__Historic_.csv]</parent-name>
+            <remote-alias>PRECINCT</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>JURISDICTION_CODE</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[JURISDICTION_CODE]</local-name>
+            <parent-name>[NYPD_Shooting_Incident_Data__Historic_.csv]</parent-name>
+            <remote-alias>JURISDICTION_CODE</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LOCATION_DESC</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[LOCATION_DESC]</local-name>
+            <parent-name>[NYPD_Shooting_Incident_Data__Historic_.csv]</parent-name>
+            <remote-alias>LOCATION_DESC</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>STATISTICAL_MURDER_FLAG</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[STATISTICAL_MURDER_FLAG]</local-name>
+            <parent-name>[NYPD_Shooting_Incident_Data__Historic_.csv]</parent-name>
+            <remote-alias>STATISTICAL_MURDER_FLAG</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PERP_AGE_GROUP</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[PERP_AGE_GROUP]</local-name>
+            <parent-name>[NYPD_Shooting_Incident_Data__Historic_.csv]</parent-name>
+            <remote-alias>PERP_AGE_GROUP</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PERP_SEX</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[PERP_SEX]</local-name>
+            <parent-name>[NYPD_Shooting_Incident_Data__Historic_.csv]</parent-name>
+            <remote-alias>PERP_SEX</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PERP_RACE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[PERP_RACE]</local-name>
+            <parent-name>[NYPD_Shooting_Incident_Data__Historic_.csv]</parent-name>
+            <remote-alias>PERP_RACE</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>VIC_AGE_GROUP</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[VIC_AGE_GROUP]</local-name>
+            <parent-name>[NYPD_Shooting_Incident_Data__Historic_.csv]</parent-name>
+            <remote-alias>VIC_AGE_GROUP</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>VIC_SEX</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[VIC_SEX]</local-name>
+            <parent-name>[NYPD_Shooting_Incident_Data__Historic_.csv]</parent-name>
+            <remote-alias>VIC_SEX</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>VIC_RACE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[VIC_RACE]</local-name>
+            <parent-name>[NYPD_Shooting_Incident_Data__Historic_.csv]</parent-name>
+            <remote-alias>VIC_RACE</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>X_COORD_CD</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[X_COORD_CD]</local-name>
+            <parent-name>[NYPD_Shooting_Incident_Data__Historic_.csv]</parent-name>
+            <remote-alias>X_COORD_CD</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Y_COORD_CD</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Y_COORD_CD]</local-name>
+            <parent-name>[NYPD_Shooting_Incident_Data__Historic_.csv]</parent-name>
+            <remote-alias>Y_COORD_CD</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Latitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Latitude]</local-name>
+            <parent-name>[NYPD_Shooting_Incident_Data__Historic_.csv]</parent-name>
+            <remote-alias>Latitude</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Longitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Longitude]</local-name>
+            <parent-name>[NYPD_Shooting_Incident_Data__Historic_.csv]</parent-name>
+            <remote-alias>Longitude</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Temperature sheet.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DATE</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[DATE]</local-name>
+            <parent-name>[Temperature sheet.csv]</parent-name>
+            <remote-alias>DATE</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TMAX</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[TMAX]</local-name>
+            <parent-name>[Temperature sheet.csv]</parent-name>
+            <remote-alias>TMAX</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TMIN</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[TMIN]</local-name>
+            <parent-name>[Temperature sheet.csv]</parent-name>
+            <remote-alias>TMIN</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Boro' datatype='string' name='[BORO]' role='dimension' type='nominal' />
+      <column caption='Date' datatype='date' name='[DATE]' role='dimension' type='ordinal' />
+      <column caption='Incident Key' datatype='integer' name='[INCIDENT_KEY]' role='dimension' type='ordinal' />
+      <column caption='Jurisdiction Code' datatype='integer' name='[JURISDICTION_CODE]' role='dimension' type='ordinal' />
+      <column caption='Location Desc' datatype='string' name='[LOCATION_DESC]' role='dimension' type='nominal' />
+      <column aggregation='Avg' datatype='real' name='[Latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column aggregation='Avg' datatype='real' name='[Longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Occur Date' datatype='date' name='[OCCUR_DATE]' role='dimension' type='ordinal' />
+      <column aggregation='Hour' caption='Occur Time' datatype='datetime' name='[OCCUR_TIME]' role='dimension' type='ordinal' />
+      <column caption='Perp Age Group' datatype='string' name='[PERP_AGE_GROUP]' role='dimension' type='nominal' />
+      <column caption='Perp Race' datatype='string' name='[PERP_RACE]' role='dimension' type='nominal' />
+      <column caption='Perp Sex' datatype='string' name='[PERP_SEX]' role='dimension' type='nominal' />
+      <column caption='Precinct' datatype='integer' name='[PRECINCT]' role='measure' type='quantitative' />
+      <column caption='Statistical Murder Flag' datatype='boolean' name='[STATISTICAL_MURDER_FLAG]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Tmax' datatype='integer' name='[TMAX]' role='dimension' type='ordinal' />
+      <column caption='Tmin' datatype='integer' name='[TMIN]' role='measure' type='quantitative' />
+      <column caption='Vic Age Group' datatype='string' name='[VIC_AGE_GROUP]' role='dimension' type='nominal' />
+      <column caption='Vic Race' datatype='string' name='[VIC_RACE]' role='dimension' type='nominal' />
+      <column caption='Vic Sex' datatype='string' name='[VIC_SEX]' role='dimension' type='nominal' />
+      <column caption='X Coord Cd' datatype='integer' name='[X_COORD_CD]' role='measure' type='quantitative' />
+      <column caption='Y Coord Cd' datatype='integer' name='[Y_COORD_CD]' role='measure' type='quantitative' />
+      <column-instance column='[Forecast Indicator]' derivation='None' forecast-column-base='[Forecast Indicator]' forecast-column-type='forecast-indicator' name='[none:Forecast Indicator:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.602888' measure-ordering='alphabetic' measure-percentage='0.397112' rowDisplayCount='21500' show-hidden-fields='true' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <default-sorts>
+        <manual-sort column='[none:Forecast Indicator:nk]' direction='ASC'>
+          <dictionary>
+            <bucket>&quot;Actual&quot;</bucket>
+            <bucket>&quot;Estimate&quot;</bucket>
+          </dictionary>
+        </manual-sort>
+      </default-sorts>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontsize='16'>        Relationship of Shooting Incidents with the Day&apos;s Temperature in Fahrenheits</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='NYPD_Shooting_Incident_Data__Historic_.csv+ (Multiple Connections)' name='federated.09884ai1gwi1v11drkexl0nzfpt5' />
+          </datasources>
+          <datasource-dependencies datasource='federated.09884ai1gwi1v11drkexl0nzfpt5'>
+            <column caption='Incident Key' datatype='integer' name='[INCIDENT_KEY]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' caption='Tmax' datatype='integer' name='[TMAX]' role='dimension' type='ordinal' />
+            <column-instance column='[INCIDENT_KEY]' derivation='Count' name='[cnt:INCIDENT_KEY:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TMAX]' derivation='None' name='[none:TMAX:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.09884ai1gwi1v11drkexl0nzfpt5].[cnt:INCIDENT_KEY:qk]' scope='rows' value='Number of Shooting Incidents' />
+            <format attr='border-color' value='#b0b0b0' />
+            <format attr='border-width' value='1' />
+            <format attr='hnaxis' value='true' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.09884ai1gwi1v11drkexl0nzfpt5].[cnt:INCIDENT_KEY:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.09884ai1gwi1v11drkexl0nzfpt5].[cnt:INCIDENT_KEY:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#4e79a7' />
+                <format attr='mark-transparency' value='255' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='aspect' value='1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.09884ai1gwi1v11drkexl0nzfpt5].[cnt:INCIDENT_KEY:qk]</rows>
+        <cols>[federated.09884ai1gwi1v11drkexl0nzfpt5].[none:TMAX:ok]</cols>
+      </table>
+      <simple-id uuid='{7F03CA0C-398B-4D6A-9DE8-8AD1B2DC826F}' />
+    </worksheet>
+  </worksheets>
+  <windows pres-mode='true' source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.09884ai1gwi1v11drkexl0nzfpt5].[cnt:INCIDENT_KEY:qk]</field>
+            <field>[federated.09884ai1gwi1v11drkexl0nzfpt5].[none:INCIDENT_KEY:ok]</field>
+          </color-one-way>
+        </highlight>
+        <floating-toolbar-visibility value='1' />
+      </viewpoint>
+      <simple-id uuid='{5730644D-D13D-431D-BD55-CAE4D7635F7C}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='384' name='Sheet 1' width='384'>
+      iVBORw0KGgoAAAANSUhEUgAAAYAAAAGACAYAAACkx7W/AAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAgAElEQVR4nO3df1AUd5438Pf0tMPwI8OA7PBDJAQJEsIiEsMqEkXJcpzncRTnQ1kex3pc
+      1kr5XF15V8+zt092n3q8bO0llbqqy1mp3JaVsjjX8lKe4SjPI6xyyhKCSohBREKQE4I4EBgQ
+      Z/kxDk3384fFnCM/bH40M9jvV5UVhun59mcs0+/+fvvb3zYoiqKAiIh0R/B1AURE5BsMACIi
+      nWIAEBHpFAOAiEinGABERDrFACAi0inR1wUQEZE6Dx48wPvvv4+7d+9i/fr1+Ju/+RuYzeZF
+      t2fgfQBERKvLT37yE7z33nv4+uuvcebMGYyOjmLdunXo7+/HL37xC/zDP/wDxsbG8Kd/+qdo
+      aGhAbm4uLly4gD/7sz/zaodDQEREq9T9+/exZcsWbNmyBTk5ObDZbHjw4AE2b94Ms9mMzz77
+      DLm5uTh06BB27Ngx4/MMACKiVcxgMEAQBM+frq4ufPXVV8jJyYEsy+jp6UFcXBza29tnfJYB
+      QES0yvzwhz8EAKxfvx4vvvgiUlJSEBkZia1btyIpKQkhISG4e/cuMjIyMDIygg8++ABTU1Mz
+      2uE1ACIinWIPgIhIp/wyAGbrqhAR0fLyywAgIiLtMQCIiHRKszuBFUXBhQsXAADr1q1DUlIS
+      qqqqAAC5ubno6OjA0NAQgoODsX37dq3KICKiOWgWABMTEwgODkZ2djaqq6sxOTmJbdu2wWKx
+      oLGxERMTE8jPz0d1dTUAQJZlTE9IevxnIiLShmZDQIGBgXA6nbh8+TK+++47jI2NwWKxIDAw
+      EG63G6L4KHtEUeTBnojIBzTrARgMBvze7/0eZFlGTU0NoqOj0dXVhdDQUISHh6Ovrw+KomBi
+      YgIGgwEGg8Hr80ajUavSiIgIGt8I1tDQgPHxcWzbtg1BQUG4cuUKJicn8dprr2FwcBA3btzA
+      xo0b8fzzz3t9bmpqigFARKQxv7wTmAFARKQ9TgMlItIpBgARkU4xAIiIdIoBQESkUwwAIiKd
+      YgAQEekUA4CISKcYAEREOsUAICLSKQYAEZFOMQCIiHSKAUBEpFMMACIinWIAEBHpFAOAiEin
+      GABERDrFACAi0ikGABGRTjEAiIh0igFARKRTDAAiIp1iABAR6RQDgIhIpxgAREQ6xQAgItIp
+      BgARkU4xAIiIdIoBQESkUwwAIiKdYgAQEekUA4CISKcYAEREOsUAICLSKQYAEZFOaRoAfX19
+      qK+vx/379wEA7e3taGlpAQCMjY3h888/x8jIiJYlEBHRHDQNgCtXrmDLli2oq6vDvXv3cP/+
+      fRiNRrS1teHSpUtIT0/H5cuXtSyBiIjmIGrZ+Jo1a3DhwgWEhYWhu7sbmzdvRmBgIGpqahAY
+      GIjg4GA899xzUBQFsixDlmUAwNTUFCRJ0rI0IiLd0ywAJEmC0WhEfn4+qqqqEBkZCZfLhTVr
+      1sBoNHoO8FNTUzAYDDAajTAajQAAQRA8PxMRkTY0CwBBEDA2NoarV68CAF566SVUV1dDFEVs
+      374dbW1t+O1vf6vV7omI6CkMiqIoWjWuKApcLhcCAwMBPOoVKIqCNWvWAAAmJiY87z1uamqK
+      PQAiIo1pGgCLxQAgItIe7wMgItIpBgARkU4xAIiIdIoBQESkUwwAIiKdYgAQEekUA4CISKcY
+      AEREOsUAICLSKQYAEZFOMQCIiHSKAUBEpFMMACIinWIAEBHpFAOAiEinGABERDrFACAi0ikG
+      ABGRTjEAiIh0igFARKRTDAAiIp1iABAR6RQDgIhIpxgAREQ6xQAgItIpBgARkU4xAIiIdIoB
+      QESkUwwAIiKdYgAQEekUA4CISKcYAEREOsUAICLSKQYAEZFOiVo1PDU1hbq6OgBAX18f9u3b
+      h6qqKgBAbm4uOjo6MDQ0hODgYGzfvl2rMoiIaA4GRVEULXcwPDyMW7duISQkBDExMbBYLGhs
+      bMTExATy8/NRXV2N/Px8yLKM6VJkWYbBYNCyLCIi3dN8COjatWv4wQ9+gLGxMVgsFgQGBsLt
+      dkMUH3U+RFGExhlERESz0GwICACcTifMZjNMJhOio6PR1dWF0NBQhIeHo6+vD4qiYGJiAgaD
+      YcYZv9Fo1LI0IiLd03QIqLu7G1FRUTCbzVAUBVeuXMHk5CRee+01DA4O4saNG9i4cSOef/55
+      r89NTU0xAIiINKb5NYDFYAAQEWmP00CJiHSKAUBEpFMMACIinWIAEBHpFAOAiEinGABERDrF
+      ACAi0ikGABGRTjEAiIh0igFARKRTDAAiIp1iABAR6RQDgIhIpxgAREQ6xQAgItIpBgARkU4x
+      AIiIdIoBQESkUwwAIiKdYgAQEekUA4CISKcYAEREOsUAICLSKQYAEZFOMQCIiHSKAUBEpFMM
+      ACIinWIAEBHpFAOAiEinGABERDrFACAi0ikGABGRTjEAiIh0igFARKRTmgaAoigYHBzExMQE
+      AGBsbAxOp9PrPVmWtSyBiIjmYFAURdGq8UuXLiE8PBxmsxnR0dG4fPkyAgICsGnTJty6dQtr
+      166F3W7H3r17vT43NTUFo9GoVVlERARA1LLxgYEBBAUFYd26dWhvb8euXbsQEhKC2tpaKIqC
+      jIwMOBwOKIoCWZY9vYGpqSlIkqRlaUREuqdZACiKAkEQkJqait/85jeIjo6G0WiEIAhQFAUG
+      gwEAPP81Go2es35BENgDICLSmGYBYDAYYDKZMDExAVEUsWHDBly7dg0hISGIj4/HN998g76+
+      PoyNjXlCgIiIVo6m1wBcLhfa29uRkJAAi8WCu3fvYnJyEgkJCXj48CHa29vx4osvIigoyOtz
+      vAZARKQ9TQNgsRgARETa430AREQ6xQAgItIpBgARkU4xAIiIdIoBQESkUwwAIiKdYgAQEekU
+      A4CISKcYAEREOsUAICLSKQYAEZFOLTgAFEXB1NSUFrUQEdEKUr0c9IMHD1BbW4v+/n7cu3cP
+      P/vZzxAQEKBlbUREpCHVPQCXywW73Q63243U1FSMj49rWRcREWlMdQ/AZrNh8+bNePHFF2G3
+      22G1WrWsi4iINKa6BzA4OIi+vj6sXbsWX331FYaHh7Wsi4iINKaqB6AoCn71q1/Bbrejs7MT
+      oaGhCA8P17o2IiLSkOongk1OTuLWrVueC78bN26EIGgzi5RPBCMi0p7qI3h/fz8qKirQ2dmJ
+      zs5O+OGTJImIaAFUXwQODw9HWFgYNmzYAAAwGAyaFUVERNpT3QMwGo1ISkpCV1cXurq62AMg
+      IlrlVPcA1qxZg3v37kFRFERFRWlZExERrQDVPYDOzk5s2LABYWFhGB0dxYMHD7Ssi4iINKY6
+      ADZs2ICvv/4aV65cwdDQEMLCwrSsi4iINKZqGmhvby/u3Lnj9bvt27drNlWT00CJiLSnqgdg
+      NBrhcrlw/fp1BAQE4MqVK1wRlIholVMVANHR0cjMzMTY2BhsNhvcbjcXgyMiWuVU3wkMALdv
+      38aXX36J73//+3j55Zc1K4pDQERE2lM1DfTmzZt4+PAhLl26BADo6elBUlIS1qxZo2lxRESk
+      HdU9AEVRMDAwgMjISPT19SE6OlqzotgDICLSnuppoN3d3WhqagIAXL58Gffv39esKCIi0p7q
+      O4HXrVuHf/7nf4bdbsfAwABCQ0O1rIuIiDS2oIvAg4ODsNvtWLt2LWJiYrgcNBHRKqb6CH7v
+      3j38/d//PVpbW/Hb3/4WsixrWRcREWlM9RBQaGgoXnjhBezcuRMAVJ39X79+HQ8ePEB4eDjS
+      0tJQW1sLSZKwa9cu2O12tLe3Iz4+HklJSYv/BkREtCiqewCCIMBisaCurg51dXWqegBDQ0PY
+      tWsXNm3ahG+++Qbr169Heno6vvzyS9y8eRN5eXm4ffv2kr4AEREtjqoewPDwMD777DMEBwcv
+      eAcXL15EWFgYXC4XXnnlFQQGBqK5udnzaMmAgAAoigJZlj2hMjU1BUmSFrwvIiJST1UABAQE
+      4IUXXvD6nZohoNzcXAiCgE8//RTr1q3D8PAwQkNDERgYiNHRUQCAJEkwGAwwGo2eC7+CIPAi
+      MBGRxhY0C2ghFEVBdXU1RFFEWFgY0tPT8emnn0JRFLz++uu4c+cO7t27h7Vr12LLli1en+Us
+      ICIi7akOgIcPH+Lq1aue1+vXr0dCQoImRTEAiIi0p/oi8Pj4OFpaWhAYGIj6+nr827/9G/r7
+      +7WsjYiINLSgWUBOpxNWqxWSJOGVV17ByMiIlrUREZGGFrwc9M2bN7F161YoioLIyEiIoupb
+      CVTjEBARkfZU9wCcTid+/etfo7OzE6dOnYLNZtPk4E9ERCtD9RHc5XIhLS0N+/bt07IeIiJa
+      IaoDIDAwEE1NTejq6gIAHDlyhA+EISJaxVRdAxgdHYWiKHA6nZ7fRUdHczVQIqJVTFUPYHBw
+      EG63G1988YXnd/v379csAIiISHuqjuAvvPACIiMjsWHDBpSUlOD555/HxMSE1rUREZGGVPUA
+      FEXBsWPHYLfbUV9fj6GhIWRmZmpdGxERaUj1fQCjo6P49ttvsWHDBpjNZk2L4jUAIiLtqZ4F
+      tGbNGnzyySewWCyYmJjAT37yEx6kiYhWMdVXcb/99lts3rwZR44cQXx8PAYGBrSsi4iINKY6
+      ABITE9Hb24t33nkHLpcLUVFRWtZFREQaW9BicC+//DJMJhNefvllGAwGLesiIiKNqQ6Au3fv
+      oqOjA3/5l3+Ja9euYXh4WMu6iIhIY6oDIDg4GH19fWhqasLw8LDmM4GIiEhbC1oOenBwELdu
+      3cKmTZsQFhamWVGcBkpEpD3VATA0NIR33nkHNpsNAPBXf/VXmi0GxwAgItKe6vsABEFAZmYm
+      iouLtayHiIhWiKoewBdffIHa2lo8fPgQAQEBALRdDpo9ACIi7anqAWzevBnPPfccNm7ciH//
+      93+HzWbjswCIiFY5VQHQ2toKh8OB4eFhjI6O4vbt29i0aRMCAwO1ro+IiDSiahqo1WrF119/
+      jcrKShQWFiIgIAALmDxERER+SPUsoLa2NoSEhCAuLg43btzApk2bNCuK1wCIiLS3oPsAVgoD
+      gIhIe6qGgP7lX/4FPT09OH/+vNb1EBHRClHVA+jr68NHH32E3t5eJCQkAAD++q//mtNAiYhW
+      MdVDQJOTk/iv//ov3L17F+np6fje976nWVEMACIi7aleDM7pdOKTTz5BWFgY/umf/gljY2Na
+      1kVERBpTHQAulwsRERF46aWXYLFY4Ha7tayLiIg0tqBZQFeuXMEXX3yB7OxsZGRkaFYUh4CI
+      iLTHaaBERDqlegjowYMH+OSTT7SshYiIVpDq5aADAgJQX1+PqakpBAcHIz8/n2fpRESr2IKm
+      gd6+fdvzOjk5GYLw9A5ES0sLgoODkZCQgNraWkiShF27dsFut6O9vR3x8fFISkry+gyHgIiI
+      tKe6BzA1NYWqqiooioKoqCi8+OKLTw2AkZER2O12WCwWTE5OYv369QgNDcWXX34Jh8OBP/iD
+      P8B//Md/zAgAIiLSnuoA6O3tRVpaGkZGRvC73/0OY2NjsFqt837m888/x44dO3Dz5k04HA68
+      8sorCAwMRHNzs+fBMtMri8qyDFmWATwKG0mSlvC1iIjoaVQHwIYNG9DY2IhvvvkGL7300lMP
+      /iMjI5BlGdeuXcPdu3eRlpaG4eFhhIaGIjAwEKOjowAASZJgMBhgNBo9wz6CIHAIiIhIY6oD
+      AHh0YDabzYiMjHzqtlarFX/4h38Il8uFzs5OJCcn49NPP4WiKHj99ddx584d/OY3v0FERMSi
+      iyciosVTfRG4u7sb9fX1+JM/+RP84z/+I3784x8jODhYk6J4EZiISHuqegAtLS34/PPP0d7e
+      jvHxcfT09MBkMmldGxERaUhVD+Dhw4dwuVxev7NYLDAYDJoUxR4AEZH2VPUAAgIC4HQ68ctf
+      /hLR0dEAtH0eABERaW9BdwJv2bIFe/bsefRBcUHXj4mIyM+oPoqPjo6iubkZDx8+BAD86Ec/
+      YggQEa1iqo/gISEhiImJQWZmJgCoWgaCiIj8l+qjuMlkQkpKCu7du4d79+7BD1eRJiKiBVDd
+      A5icnMTNmzcBAG63G7m5uZypQ0S0ii3qgTC//vWv8cd//McICgrSoiZOAyUiWgGqewC/+93v
+      8OGHHwIABgYGUFRUpFlRRESkPVU9AFmWZ6zOuWbNGt4IRkS0iqnqAXz33Xf413/9VwDA+Pg4
+      Ll68iKqqKs+SzkREtPqovgYwNjaGiooKjIyMoKioCOvWrdOsKPYAiIi0p2oa6Lfffos///M/
+      hyAI+P73v4/bt29jampK69qIiEhDqnoAo6Oj+Oabb7x+t3nzZs1uBmMPgIhIe4uaBqo1BgAR
+      kfa4ngMRkU4xAIiIdIoBQESkUwwAIiKdYgAQEekUA4CISKcYAEREOsUAICLSKQYAEdEqUV9f
+      v6zt8anuRER+6t1330VUVJTntdVqXdb2GQBERH4qLi4O+/fv96y7VllZuaztcy0gIiI/JkkS
+      3G43goKC4HK5YDabl61t9gCIiPzU8ePHYTKZEBQUBLvdjqKiIsTFxS1b+wwAIiI/5Ha7YTab
+      UVpaCuDR0xgrKytx4MCBZdsHh4CIiPzUhQsX0N/fD0EQIMsyiouLOQRERKQHVqsVISEhsFqt
+      uHr1KkRxeQ/ZvA+AiMgPybKM1tZWjI+Po76+HkVFRcs+C4g9ACIiPyQIAkwmE3bs2AFZlpd1
+      6GeaptcA3G43RkZGEBERAUEQMDY2hqmpKVgsFiiKAofDgbVr1854tjCvARARAXa7HTExMZ6f
+      g4KClvVmME0D4LPPPkNoaCi6u7uxc+dOXL58GQEBAdi0aRNu3bqFtWvXwm63Y+/evV6fYwAQ
+      EWlP0yGgjIwMdHV14bnnnkN7ezt27dqFkJAQ1NbWQlEUZGRkwOFwQFEUyLIMWZYBPAoASZK0
+      LI2IyG+99X+P4tvvHsz63qRrHD//X/8TaWlpS96PpgHw8OFDjI2NQZZlz1m9IAhQFAUGgwEA
+      PP81Go2es35BENgDIKJnVlNTE1pbW+FwOJCcnDxjFOTb7x5gct2OWT/r+LYNY2NjCAgIWHId
+      ms0CmpycxL1795CYmIiRkRFs2LAB165dQ2NjI+Lj4+F2u9HX14exsTFPCBARPeskSUJbWxsO
+      HjyImJgYpKamorq62ie1aNYDWLNmDaxWK+7evYu8vDw899xzcLvdmJycREJCAtavX4/29nbk
+      5eVpVQIRkd8RRRHDw8Noa2vD6OgoIiIi4Ha7fVIL7wQmIlpho6OjaG1tRWJiIkRRnDGzZ9+P
+      Ds87BPTLH+9GTk6O1+/7+/vhcrkQGxur+oYx3ghGRLSCZFnGhQsXEBcXh1OnTqG6uhqNjY1L
+      avODDz7A9evX0dPTgxMnTqCzs1PV53gjGBHRCnM6nejp6cHevXths9lQU1ODzMzMRbUlyzKC
+      goKwZ88eAEBqaipqa2uRmJj41M8yAIiIVpAgCEhJSUFHRwdqamoQExODkpKSJbWXmJiI8vJy
+      z93DxcXF6j676L0SEdG8HA7HrL8fHR2FzWbDz3/+c5SWlqK7u3tJ+4mKikJpaSncbjfGx8fh
+      crlUfY4BQES0TLq7u73+zPYQd1mW0d3djdjYWFRXV3umhS6WJElobm5GY2MjsrOzUVJSgvPn
+      z6v6LIeAiIiWyYcffugZi5+LIAieYaDOzs5ZQ2IhRFHEwMAAzGYzuru7cfXqVWRkZKj77JL2
+      TES0glwuFwRBgCRJGBgYQHx8vK9L8lJWVoakpCTPApfNzc2zbvf6668DAAoKCtDW1rbkBd7+
+      4i/+Ah0dHRgYGEBqaqrq9hgARLRqvPvuu4iIiIAoioiKikJvby+ys7N9XZaHKIoQBAHnz5/H
+      wMCA53GOT4qNjfX8nJKSsuT9vvvuuwgKCkJJSQnMZjPOnTuHgoKCp9e75D0TEa0ASZKQnJyM
+      PXv2oKKiAgUFBTh9+rRfBUBTUxMsFgsAoLCwEOfOnUNRUZHn/f/905+hq+/+rJ+ddI3jb//P
+      EaSnpy9on7IsIz4+HsXFxTh27BjefPNNz8KaT8MAIKJVQRRFxMfHw2KxYP/+/ejp6cGWLVt8
+      XZaX9vZ22O127N69G5IkzXiIS1ff/Xnv8B0ZGVnwPgVBgNlshiAIKCkpwYkTJ5CcnKzqswwA
+      Ilo1kpOTMTIygoGBAQwPD/tdABw9ehTj4+Mwm81wOBwrttZZYWEhACAiIgKHDx9W/TkGABGt
+      GocPH0ZBQQGcTidGRkYQFxfneWKWP3h8LN5isaCqqkrVWPxiNTc3z9trSE9Pn/eCMAOAiFaN
+      EydO4PTp07BarUhLS/Org/9SxuIX6/+98z4cYtys7z0Y6MYHPyubsWjc4xgARLRqmM1mlJWV
+      oaWlBeHh4b4ux8tSxuIXa405CBHr1M8ieu+991BcXOyZPssAIKJV4/EhlqCgINXTHVfKYsfi
+      V0pcXBxaW1tRUVGBvLw8BgARrQ6+GGJRa6lj8Stp+vGTdXV1DAAiWh18McSi1lLH4ldKXl4e
+      ZFmGIAjIzs5mABDR6uHrIZaenh643e4Za+0vdCzeV371q1/BYrGgsLDw0R3Vvi6IiOhpfDnE
+      IkkSzp49i61bt6K2thZxcXHo7e31izP6hZBlGbGxsSgtLcWxY8dw8OBBBgAR+b+VGmJxOByI
+      iIjw+p0gCBgfH4fT6cTWrVsRERGBhoaGJe9rpQmC4FmDqKysDKdPn2YAEJH/02qI5ckHsTQ3
+      N3uGmaYJgoCtW7fi+vXrsNvtiI+Px759+5a9lpVy4cIF5OXloaysjAFARPqlZv1+4NGKnY+v
+      2tnU1OR3y1A8zfSDaLZu3Yrq6mrk5OQwAIhIO62trUhNTcXHH38Mp9OJ0tLSGQuk+ZLa9fvf
+      f/99r2sMVqt11QXAbA+iYQAQkWZaW1sREREBq9WKvXv34ty5c6ofWL4SnpxGKknSrNuFhISg
+      tLTUExSVlZWa16aFJx9EwwAgIs3cuXMHPT09yMvLw/DwMGw2m69L8qL2zL6srMxz8Aew6mYA
+      TXvyQTQMACLSzFtvvQVJkuB2u+F2u/3uwKn2zP69997zWoKirq7Or5ageJq5HkTDACAiTciy
+      jFOnTiEhIQGSJMFkMkEURWRmZvq6NI+9e/fC4XDAZrNBlmWkpaXN2GZ6/vyBAwdw/PhxFBQU
+      +M0SFGrN9SAaYZZtiYiWTJZljI6OIjs7Gzk5ObDZbHA4HL4uy0OWZZSXl6OmpgYtLS1wu91o
+      aWmZsZ0gCJ4LxYcOHUJ9fT0SEhJ8UPHyYw+AiDQhiiLy8/Nx8uRJCIKAqKioOadcnj17Fk6n
+      E6IoYnx8HAcOHPA8W1cr0zdGTZ/ZP3kD2OOmey2CIPjVReylYgAQkWbq6uogyzJKS0shyzIa
+      GhqQlZXltY0sy3C73SgrKwPw30sv7N+/X/P6kpKSAABvvPEGzp49O2NWUHl5+YybxR538OBB
+      z9r6qxEDgIg0IcsyTCYT9u7di/LycpSUlGBgYGDGdoIgQJIklJeXe5ZdWKmz7Ked2Z+/3Djv
+      Q9xzursZAERETxIEAaOjo7BYLMjMzMSJEyfmfIRjcXExGhsbIUkSMjIyNF87/1k/s1eLAUBE
+      mjl06BAAIC0tDampqbPeaCXLMo4dO4aioiJUV1ejt7cXmZmZmq71/6yf2avFWUBEtCIEQYDJ
+      ZJrxe1mWERMTg8TERJjNZpSUlKCpqckHFeqPpj2AmpoaTE1NwWQyYfv27aiqqgIA5ObmoqOj
+      A0NDQwgODsb27du1LIOIVtieP/ofuDOszPre+INBnDz2t56bwkRRRFxcHMrLy7F79264XC7s
+      3r17SfsfGBiAzWZDU1MTBgYGVC34pkeaBsDOnTthNBpx/vx53Lp1C9u2bYPFYkFjYyMmJiaQ
+      n5+P6upqAI/OAhRFmfEzEa2clpYW3L9/Hzt37oQkSbh37x6ef/75BW8XGBqBjS/vnHUfjm/b
+      MDU15TUclJWV5TU76Ouvv/ZaNuJpx4Mn26upqcHv//7v48aNG/jBD36Aqqoq5OXlLbi9Z307
+      TQNgfHwcNTU12LlzJ9rb22GxWBAYGAi32w1RfLRrURR5sCfyA5IkobGxERkZGbh8+TK2bduG
+      GzduzAgAtdstxC9+8QvExf33A1/CwsIW3RbwaBG6wMBApKenIzY2Fp2dnUtq71mlaQBcvHgR
+      BQUFMJlMiI6ORldXF0JDQxEeHo6+vj4oioKJiQkYDAYYDAavzxqNRi1LI6IniKIIk8mEzMxM
+      VFZWorm5GYIgeE7WFrLdk/8/P8loNHptv3HjRuzfv99rTZ6ltPfWW2+ho6MDSUlJGBgYQH5+
+      /qLae9a30/QicGhoKD7//HNcuXIFCQkJGBkZQWdnJzZv3oxXX30VFy9enHXtDSLyjelx+cLC
+      QpjNZqSnpy9pO7UOHDjgtdrmUhda+7u/+zsMDAwgJCQECQkJfvUMAn+iaQ/ghz/8odfrx8f4
+      IiMjvcbkiMj3PvroI+zYsQP5+fnzPvBE7XaL9XgYLEZaWhoSExNx/PhxxMfH81gzB94HQEQe
+      ag+cy3WAXchsoYVKTExEYmIient70dvb67UWPj3CACAiL2oPnMtxgA2yfg8bX577hqzFenxZ
+      h9jYWPT39y+6rWcZA4CIPNQeOP39APvkss7d3d0oLCz0UTX+iwFARB5qD5z+foCtqKhAUVGR
+      r8vwe1wKgog8KioqlnU7XykpKUFaWhrS09ORnp7uWfaZvLEHQEQeJSUlSExM9MzCmW3tnoVs
+      5ytPHvBTUlJ8VIl/YwAQkYfaA6e/HmC5zPPCMACISPWB098PsFzmeWEYAESk+sDJA+yzhReB
+      iYh0igFAtIKmn4nb1NTkeT7GfCRJmvUpWou13O3R6sYhIKIVdOnSJezZswetra3YunUrqqur
+      kZ+fP2O7kydPQpZlOBwOOJ1OvPHGG17LJS/UcrdHzwYGANEKam1tRVBQkGed+v/w+j4AAAvV
+      SURBVI6Ojjm3TUlJgc1mQ39//7IcrJe7PVr9OAREtIJ++tOfIjY2FomJiRgYGJhzEbXS0lKI
+      ooizZ88uy36Xuz16NjAAiFZQRUUF2traUFtbi3PnzsHhcMy6XW9vL2w2G4qLi2G325e83+Vu
+      j54NDACiFSJJEkwmE7KysuBwOHDkyBHU1tbO2E6WZVRUVKCurg4XLlxAamqqqgvGc1nu9ujZ
+      wQAgWiGiKEKWZSQkJCArKwvd3d2IioqadVur1YqioiJYrVbP0/SWYrnbo2cDLwITraADBw4A
+      eLSUgtvtnnUNHUEQkJmZCbPZjH379uHOnTtzPhSloqICTqcTra2tSE5ORklJyYzHHy6kPdIX
+      9gCIVlBzc7PnT1tbGxobG2fdLjk52fNzQkLCrLOFpuf0Hzx4EBkZGSgpKUFlZeWi2yP9YQ+A
+      aAWpXaf+7bff9pqqabVaZ2wjiiJGRkZw4sQJWK1WSJKEhISERbdH+sMAIFpBapdRTkxMxP79
+      +z3bzXVmf+jQIa/XNpttSe2RvjAAiOZRX1+Pjo4OiKIISZKQmZmJ1NTURbendhnl6WsF0woK
+      Cmbdrrq62uu1y+WadTE2te2RvjAAiObR3d2NsrIyz+tTp04tKgCWuozy9Jn7k1paWlBaWup5
+      ffXqVVX1zNUe6QsDgGgeMTEx+Oijj2AymSBJEjIyMhbVjtpllPf80f/AnWFl1u3GHwzi5LG/
+      9ZrBU1paCpvN5jmgPxlOC22P9IUBQDSP3bt3Y/fu3Z7X853FL4cg6/ew8eW5g+JJT95H0Nvb
+      i8TExEW3R/rCACCaR2NjI4aHhz2v7Xa715CQr3F2Dy0FA4BoHi0tLcjJyUFISAgAwOl0+rgi
+      b5zdQ0vBACCaR2lpKZxOJyIiIgBg0dcAtMLZPbQUnApANA+TyeQ5+AOPxtj9GWf30EKwB0A0
+      j+PHj3vdrOVyufxi1gxn99ByYAAQzSMlJQWxsbGeOfr+MsbO2T20HBgARPPIzs72es0xdnqW
+      cMCQaAE4xk7PEvYAiGZx9OhRfPyfrXO+vz83FUePHl25gog0wAAgmsPG1/bN8277itVBpBVN
+      A6ClpQWtra04cOAA3G635zmkubm56OjowNDQEIKDg7F9+3YtyyAiolloGgDr16/H4OAgAODW
+      rVvYtm0bLBYLGhsbMTExgfz8fM9ytrIsQ1GUGT8T+YIsy099X5Ik1e097d/z1NQUJEnidtxu
+      RbfTNADCwsI8P4+NjcFisSAwMBButxui+GjXoijyYE+rnt1uh8vlgiiKuH37NnJzc31dEtFT
+      rdg1gOjoaHR1dSE0NBTh4eHo6+uDoiiYmJiAwWCAwWDw2t5oNK5UaUQzPG22jyAInpMYWZZx
+      7tw5xMTEQJIkpKamoqamBvn5+Z7tn/z3/SSj0QhRFLkdt1vR7TSd09bQ0ABZllFfX4+EhASM
+      jIygs7MTmzdvxquvvoqLFy8iLS1NyxKIVoTVakVcXBwsFosnCIj8naY9gKysrDlfR0ZGIi8v
+      T8vdE60IQRAQFxeHkZERhISE4OzZs15P6SLyV5wGSrQM6urqUFBQgLS0tBl3DxP5K97WSLQM
+      EhMT4Xa7ceLECVy/ft3X5RCpwgAgWiZbtmxBWVkZZFnW/NGRRMuBQ0BEy+DxReK2bNniw0qI
+      1GMPgGgZBAUF+boEogVjD4BoCfhgFlrNGABES8AHs9BqxiEgIiKdYgAQEekUA4B06dixY/j4
+      44/hcrl8XQqRz/AaAOmSzWZDXl4ezpw5A5PJhMLCQpjNZl+XRbSiGACkW+Hh4SgtLcX4+Dg6
+      Ojq4MCHpDoeASJeKi4s9P9vtdh78SZfYAyBd+uCDD2CxWAAAV69excGDB7F161YfV0W0stgD
+      oFVhdHQUra2tcLlcqKysxOjo6JLa27dvH9xuN/Ly8pCTk8ODP+kSA4BWhdOnT8PpdOLtt99G
+      VlYWzpw5s6T2YmJicOjQITQ1NXme7EWkN/yX/4xrbm5GY2MjTCYTJEnCjh07kJSU5OuyFsxk
+      MiErKwt37tyBzWZbtoP244u4EekNA+AZ19TUhEOHDnlef/TRR6syAKaHaEpKSiBJ0qK/Q21t
+      LWpra+d8Pycnh2v3kG4wAJ5xsbGxKC8v9/QAkpOTfV2Sl4aGBmRlZaGyshJ2ux1bt25FRkbG
+      jO0cDgeOHz+OjIwMNDU1zbnkckNDAwYGBgA8ekpXWVkZUlNTPe/X1tbiK/c8fwe1tQwA0g1e
+      A3jG7d69G/n5+SguLkZSUpLfXezs6ekBAIyPj+Pw4cNobW2ddbvu7m6UlZXhzJkzePPNN9HW
+      NvtCa/39/ZAkCTk5OUhNTUVCQoJmtROtdn7fA3hWxrB9pby8HBEREWhtbUVBQQFOnTqFgwcP
+      +rosD5PJhPLyclitVoyPj885ti9JEkRRxIEDByDL8pztFRUVoaOjA2fPnoUoilynn2gefh8A
+      /j6GPTo6ipCQELS3t6O5udnvlhQICQlBUVER7HY70tPT5zxz9tX3yM/PR39/v+dMPS8vb9bt
+      pkMrPT0dsiyjsLBw1u2mQ6SsrAwOhwMOhwMRERGa1E602vn9END0GPbp06dx8uRJvxvDrqio
+      AABUV1ejoKAAH3/88ZLaa2hoAABUVlbiww8/nPMB42rnxU//fR0+fBiSJCEmJmbZvsdcwzUL
+      ceLECXR2dqKyshIAUFNT89TPCILguYlrrvbOnTsHm82mqj0ivfL7HsCOHTvQ39+P+Ph4CIIA
+      h8Ph65K8SJIEp9OJiIgIuFwuCMLSMrWnpwdZWVmeMfGTJ0/OelH09OnTSE1Nxdtvv40jR47g
+      zJkzKCsrm7Hd9GcFQYAgCHNe4FT7Pd5++23ExsZCEARcvXoVZWVlyMzMXPT3tVqtyMvLQ01N
+      DZqamma8f/ToUXz8n3MHzf7cVBw9elR1e0T03/w+AE6cOIGkpCS0tLSgsLAQNTU12L9/v6/L
+      8igtLUVVVRWcTicuXbrktcbMYqgdE3/avPiFTndU+z2OHDmC06dPY8eOHTCbzXMe/NVeu0lL
+      S4PL5cLrr7+Ouro6WK3WGdtsfG3fnN8DaF9we0T0iN8HgL+f0Ymi6HUzUe0SpxEWFRV5vd69
+      e/es2z1tXvxCpzuq/R4WiwVvvvkm6uvr5xyGAdRfu3l8EbYdO2Z/tOJCLHd7RM8yvw8Afz+j
+      O378OEwmk+e1y+VaUgB0dnZ6jee3traipKRkxnaPXwsRRXHJDzZZ6PfIzs4GMHdQPO3+g+W+
+      IYs3eBEt3KoIgGn+eEaXkpKC2NhYxMfHA4DnYuZinT9/HllZWV4H49ksd/Co/R5q95ufnw8A
+      kGUZgiCgv7/f6/3lviGLN3gRLZzfBoBWZ3SNjY1oaWlBYmIi2trakJWVhfT09EXXOX0mPG2u
+      tWU6OztRU1MDh8OB+Ph4FBYWIiQkZMZ2ZWVlGB0d9czWmSsIljt41H4PtftV25MhIt/x22mg
+      02d0c/2ZLxzm097ejjfeeAPXr1/H4cOH55wXv1hzzZ65dOkS3nzzTSQkJGD//v1zTrO0WCxe
+      UzVTUlJm3S47O9tzEAaWf1Gzub6H2v2eP38ebrd7WWsiouXlsx7Al19+iaGhIQQHB2P79u0r
+      tl+3242TJ09ClmVUV1fPuV17eztGRkYAPFpTpri42OvAt9DpiSaTCQ0NDejv75/1DtWl9ngW
+      O/10od9D7X7V9mSIyHd8FgCDg4PIz8+f9yC8FHNdnHzjjTfgdrshiiK6u7vnXCvm6tWrMJlM
+      yMjIgCiKs94Vu5DpiaWlpWhra8Phw4cBAAcOHJhRr5ox7KUesGej5nssdL8Wi8VrltBcPRki
+      8h2fBcD0vHVRFKEoCgwGw5LaW8hF0ent5lso7ODBg2hqakJDQwNsNhuioqKWVJ8gCF6rUi7F
+      QoJnOanZL2fjEK0ePgsAl8sFRVEwMTGx5IM/8PSLk4s5c96yZQvS0tI8K1YuhhZn7P6Ms3GI
+      Vg+fBcCrr76Kixcvek3zXAo1s1gWc+ZsMpmQmJi4lNJ8dsZORDQfnwVAZGTknCs/LgdfXRQl
+      Ilot/j/oxbCRItTzYwAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
